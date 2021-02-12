@@ -8,7 +8,7 @@ class DB
     {
         $this->connection = new mysqli($host, $user, $password, $db_name);
 
-        if( mysqli_connect_error() ){
+        if(mysqli_connect_error() ) {
             throw new Exception('Could not connect to DB');
         }
     }

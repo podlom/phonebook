@@ -12,25 +12,25 @@ if (!empty($msg) && ($msg == 1)) {
 
 ?>
 
-<form action="<?= $action ?>" method="post">
+<form action="<?php echo $action ?>" method="post">
     <div>
         <label for="phone">Номер телефона *:</label>
-        <input type="number" name="phone" required value="<?= $phone ?>">
+        <input type="number" name="phone" required value="<?php echo $phone ?>">
     </div>
     <div>
         <label for="first">Имя *:</label>
-        <input type="text" name="first" maxlength="32" required value="<?= $first ?>">
+        <input type="text" name="first" maxlength="32" required value="<?php echo $first ?>">
     </div>
     <div>
         <label for="middle">Отчество:</label>
-        <input type="text" name="middle" maxlength="32" value="<?= $middle ?>">
+        <input type="text" name="middle" maxlength="32" value="<?php echo $middle ?>">
     </div>
     <div>
         <label for="last">Фамилия *:</label>
-        <input type="text" name="last" maxlength="32" required value="<?= $last ?>">
+        <input type="text" name="last" maxlength="32" required value="<?php echo $last ?>">
     </div>
     <div>
-        <input type="hidden" name="id" value="<?= $id ?>">
+        <input type="hidden" name="id" value="<?php echo $id ?>">
         <input type="submit" value="Добавить">
     </div>
     <div>* - Поле обязательно для заполнения</div>

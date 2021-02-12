@@ -12,8 +12,8 @@ class Contact
 
     public function __construct()
     {
-        require_once 'db.class.php';
-        $settings = require dirname( dirname(__FILE__) ) . '/conf/settings.php';
+        include_once 'db.class.php';
+        $settings = include dirname(dirname(__FILE__)) . '/conf/settings.php';
         $this->db = new DB($settings['host'], $settings['user'], $settings['password'], $settings['name']);
         if ($this->checkContactsTable() !== 1) {
             $this->setupContactsTable();
@@ -72,7 +72,7 @@ class Contact
 
     public function checkContactsTable()
     {
-        $settings = require dirname( dirname(__FILE__) ) . '/conf/settings.php';
+        $settings = include dirname(dirname(__FILE__)) . '/conf/settings.php';
         $sql = "SELECT count(*) AS cnt1 FROM information_schema.tables WHERE table_schema = '{$settings['name']}' AND table_name = '{$settings['table']}'";
         $res = $this->db->query($sql);
         if (isset($res, $res[0])) {
@@ -83,7 +83,7 @@ class Contact
 
     public function setupContactsTable()
     {
-        $settings = require dirname( dirname(__FILE__) ) . '/conf/settings.php';
+        $settings = include dirname(dirname(__FILE__)) . '/conf/settings.php';
         $sql = 'SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";';
         $r0 = $this->db->query($sql);
         $sql = "START TRANSACTION;";

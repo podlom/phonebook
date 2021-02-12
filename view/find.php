@@ -11,7 +11,7 @@
 <hr>
 <div class="search-contacts">
     <form action="" method="get">
-        <input name="query" type="text" value="<?= $query ?>">
+        <input name="query" type="text" value="<?php echo $query ?>">
         <input type="hidden" name="action" value="search">
         <input type="submit" value="Искать">
     </form>
